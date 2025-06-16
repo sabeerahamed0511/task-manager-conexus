@@ -1,3 +1,4 @@
+'use client'
 import React, { useCallback, useMemo, useState } from "react";
 import SearchIcon from '@mui/icons-material/Search';
 import { useAppSelector } from "@/redux/hooks";

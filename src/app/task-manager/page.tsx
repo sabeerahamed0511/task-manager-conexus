@@ -1,6 +1,9 @@
 'use client'
 import React, { useEffect } from "react";
-import TaskBoard from "@/components/task-board/Board";
+import dynamic from 'next/dynamic';
+const TaskBoard = dynamic(() => import('@/components/task-board/Board'), {
+    ssr: false,
+});
 
 export default function TaskManager() {
 
