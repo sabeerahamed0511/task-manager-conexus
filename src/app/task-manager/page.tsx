@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect } from "react";
+import React, { Suspense, useEffect } from "react";
 import dynamic from 'next/dynamic';
 const TaskBoard = dynamic(() => import('@/components/task-board/Board'), {
     ssr: false,
@@ -13,7 +13,9 @@ export default function TaskManager() {
 
     return (
         <>
-            <TaskBoard />
+            <Suspense fallback={<>Loading...</>}>
+                <TaskBoard />
+            </Suspense>
         </>
     )
 }

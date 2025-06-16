@@ -1,9 +1,6 @@
 'use client'
-import dynamic from 'next/dynamic';
-import React, { useEffect } from "react";
-const TaskForm = dynamic(() => import("@/components/task-form/TaskForm"), {
-    ssr: false,
-});
+import React, { Suspense, useEffect } from "react";
+import CreateTaskLazy from './CreateTaskLazy';
 
 export default function CreateTask() {
 
@@ -13,7 +10,9 @@ export default function CreateTask() {
 
     return (
         <>
-            <TaskForm />
+         <Suspense fallback={<>Loading...</>}>
+            <CreateTaskLazy />
+         </Suspense>
         </>
     )
 }
