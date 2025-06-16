@@ -1,4 +1,4 @@
-import { Task } from "@/types/task";
+import { Filter, Task } from "@/types/task";
 import { useMemo, useState } from "react"
 
 interface Props {
@@ -29,19 +29,19 @@ export const useFilter = ({ tasks }: Props) => {
 
     const filteredData = useMemo(() => {
 
-        const appliedFilterOnPriority: any = Object.keys(priorityFilters)?.map(key => ({
+        const appliedFilterOnPriority: Array<Filter> = Object.keys(priorityFilters)?.map(key => ({
             value: key as string,
             isChecked: priorityFilters[key],
         })).filter(filter => filter.isChecked);
 
-        const appliedFilterOnAssignee: any = Object.keys(assigneeFilters)?.map(key => ({
+        const appliedFilterOnAssignee: Array<Filter> = Object.keys(assigneeFilters)?.map(key => ({
             value: key as string,
             isChecked: assigneeFilters[key],
         })).filter(filter => filter.isChecked);
 
         return tasks.filter((task: Task) => {
-            const isPriorityApplied = appliedFilterOnPriority.length ? appliedFilterOnPriority.some((filter: any) => filter?.value === task?.priority) : true;
-            const isAssigneeApplied = appliedFilterOnAssignee.length ? appliedFilterOnAssignee.some((filter: any) => filter?.value === task?.assignee) : true;
+            const isPriorityApplied = appliedFilterOnPriority.length ? appliedFilterOnPriority.some((filter) => filter?.value === task?.priority) : true;
+            const isAssigneeApplied = appliedFilterOnAssignee.length ? appliedFilterOnAssignee.some((filter) => filter?.value === task?.assignee) : true;
             return isPriorityApplied && isAssigneeApplied;
         })
 

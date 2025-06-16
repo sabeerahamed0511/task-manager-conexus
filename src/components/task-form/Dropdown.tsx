@@ -19,7 +19,7 @@ interface Props {
         readonly?: boolean, 
 }
 
-export default function Dropdown({ name, required = false, id, label, options = [], value, onChange , onblur, errorMsg, readonly = false}: Props) {
+export default function Dropdown({ name, required = false, id, label, options = [], value, onChange, errorMsg, readonly = false}: Props) {
 
     return (
         <>

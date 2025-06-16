@@ -1,7 +1,6 @@
 import React from "react";
 import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
-import Button from "./Button";
 
 interface Props {
     handleClose: () => void;

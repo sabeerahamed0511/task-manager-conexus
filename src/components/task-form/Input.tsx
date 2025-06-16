@@ -1,7 +1,6 @@
 'use client'
 import React from "react";
 import Asterick from "./Asterick";
-import { Task } from "@/types/task";
 
 interface Props {
     type: string,

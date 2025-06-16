@@ -56,7 +56,7 @@ export default function SearchBar() {
                                 ) :
                                 query && searchResult?.length === 0 ?
                                     (
-                                        <span>No result for <strong>"{query}"</strong></span>
+                                        <span>No result for <strong>{`"${query}"`}</strong></span>
                                     ) :
                                     (
                                         searchResult?.map(task => (<SearchResultCard

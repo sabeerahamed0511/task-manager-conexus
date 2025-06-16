@@ -71,7 +71,7 @@ export default function Board() {
             'done': [],
         }
 
-        for (let task of data) {
+        for (const task of data) {
             if (task.status === TaskStatus.TODO) obj["to-do"].push(task);
             else if (task.status === TaskStatus["IN-PROGRESS"]) obj["in-progress"].push(task);
             else if (task.status === TaskStatus["IN-REVIEW"]) obj["in-review"].push(task);
@@ -161,7 +161,7 @@ export default function Board() {
             <CustomDrawer
                 isDrawerOpen={isDrawerOpen}
                 handleDrawerClose={handleDrawerClose}
-                priorityFilters={priorityFilters as any}
+                priorityFilters={priorityFilters}
                 setPriorityFilter={setPriorityFilter}
             />
 

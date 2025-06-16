@@ -13,7 +13,7 @@ interface Props {
         readonly?: boolean, 
 }
 
-export default function Description({ name, required = false, id, label, value, onChange, onblur, errorMsg , readonly = false}: Props) {
+export default function Description({ name, required = false, id, label, value, onChange, errorMsg , readonly = false}: Props) {
 
     return (
         <>
