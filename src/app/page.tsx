@@ -1,7 +1,18 @@
+"use client"
 import { routes } from "@/utils/pageRoutes";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Home() {
+
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push(routes.taskManager);
+  }, []);
+
+
   return (
     <div className="grid items-center justify-items-center min-h-screen">
 
